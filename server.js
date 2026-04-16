@@ -11,6 +11,7 @@ app.use(
       "http://localhost:3000",
       "http://127.0.0.1:3000",
       "http://192.168.1.99:3000",
+      "https://portfolio-website-eta-one-70.vercel.app",
     ],
   }),
 );
@@ -20,6 +21,10 @@ app.use("/api/contact", contactRoute);
 
 app.get("/", (req, res) => {
   res.send("Server is running");
+});
+
+app.get("/ping", (req, res) => {
+  res.status(200).json({ message: "pong" });
 });
 
 const PORT = process.env.PORT || 5000;
